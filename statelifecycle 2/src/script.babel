@@ -1,0 +1,29 @@
+function MyComponent(props) {
+  const someString = "something in the air"
+  return(
+    <div className="class1 class2" >
+    
+      <h2>Hello, {props.planet}</h2>
+      <p>{someString}</p>
+      <p>{18+4}</p>
+    </div>
+  
+  )
+}
+const element1 = <MyComponent planet="Tierra" />
+ReactDOM.render(
+  element1,
+  document.getElementById('root')
+)
+  
+  
+
+
+// function Welcome(props) {
+//   return <h1>Hello, {props.name}</h1>
+// }
+// const element = <Welcome name="Sara" />
+// ReactDOM.render(
+//   element,
+//   document.getElementById('root')
+// )

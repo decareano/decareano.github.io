@@ -1,29 +1,48 @@
-function MyComponent(props) {
-  const someString = "something in the air"
-  return(
-    <div className="class1 class2" >
-    
-      <h2>Hello, {props.planet}</h2>
-      <p>{someString}</p>
-      <p>{18+4}</p>
-    </div>
-  
-  )
-}
-const element1 = <MyComponent planet="Tierra" />
-ReactDOM.render(
-  element1,
-  document.getElementById('root')
-)
-  
-  
+// From here: 1.
 
-
-// function Welcome(props) {
-//   return <h1>Hello, {props.name}</h1>
+// function tick() {
+//   const element = (
+//     <div>
+//       <h1>Hello, world!</h1>
+//       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+//     </div>
+//   );
+//   ReactDOM.render(
+//     element,
+//     document.getElementById('root')
+//   );
 // }
-// const element = <Welcome name="Sara" />
-// ReactDOM.render(
-//   element,
-//   document.getElementById('root')
-// )
+
+// setInterval(tick, 5000);
+
+// to here: 2. 
+// I see two functions: One Clock with props and the other 
+// tick function as a regular function (ie: not component with react-DOM method in it)
+
+// encapsulate the clock. dont know what that is but I play
+// Clock was a function now it's a class
+// date will be moved from props to state....stay tune...
+// this.props gets replaced by this.state
+class Clock extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {date: new Date()}
+    
+  }
+  render() {
+  return (
+    <div>
+      <h1>Hello, world and back!</h1>
+      <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+    </div>
+  );
+  }
+}
+
+  ReactDOM.render(
+    <Clock />,  //this is redundant. it should be just <Clock />
+    // how do we do it? with STATE...
+    document.getElementById('root')
+  );
+
+
